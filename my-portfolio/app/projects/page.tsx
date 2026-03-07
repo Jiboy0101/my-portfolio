@@ -47,24 +47,24 @@ const projectsData = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-20 px-6 bg-zinc-50 dark:bg-zinc-900">
+    <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12">Featured Projects</h2>
+        <h2 className="text-4xl font-bold mb-12 text-black dark:text-white">Featured Projects</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projectsData.map((project, i) => (
             <div key={i} className="group cursor-pointer">
               <div className={`${project.image} rounded-lg h-48 mb-4 transition-transform group-hover:scale-105`}></div>
-              <div className="bg-white dark:bg-zinc-800 rounded-lg p-6 border border-zinc-200 dark:border-zinc-700 hover:shadow-lg transition">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-zinc-600 dark:text-zinc-300 mb-4">{project.description}</p>
+              <div className="rounded-lg p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition">
+                <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{project.title}</h3>
+                <p className="mb-4 text-gray-600 dark:text-gray-300">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, j) => (
-                    <span key={j} className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 rounded-full text-sm">
+                    <span key={j} className="px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200">
                       {tech}
                     </span>
                   ))}
                 </div>
-                <a href={project.link} className="inline-block text-blue-600 dark:text-blue-400 font-semibold hover:underline">
+                <a href={project.link} className="inline-block font-semibold hover:underline text-blue-600 dark:text-blue-400">
                   View Project →
                 </a>
               </div>
@@ -78,35 +78,35 @@ export function ProjectsSection() {
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur border-b border-zinc-200 dark:border-zinc-800">
+      <nav className="sticky top-0 z-50 bg-white dark:bg-black backdrop-blur border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold hover:text-blue-600 dark:hover:text-blue-400">Portfolio</a>
-          <div className="flex gap-6 text-sm">
-            <a href="/about" className="hover:text-blue-600 dark:hover:text-blue-400">About</a>
-            <a href="/projects" className="hover:text-blue-600 dark:hover:text-blue-400 font-semibold">Projects</a>
-            <a href="/skills" className="hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
-            <a href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+          <a href="/" className="text-xl font-bold text-black dark:text-white hover:opacity-80 transition">Portfolio</a>
+          <div className="flex gap-6 text-sm items-center">
+            <a href="/about" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">About</a>
+            <a href="/projects" className="text-black dark:text-white font-semibold">Projects</a>
+            <a href="/skills" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Skills</a>
+            <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Contact</a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-950 dark:to-zinc-900 py-16 px-6">
+      <section className="bg-gray-50 dark:bg-gray-900 py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4">My Projects</h1>
-          <p className="text-lg text-zinc-600 dark:text-zinc-300">A showcase of recent work and side projects I've built</p>
+          <h1 className="text-5xl font-bold mb-4 text-black dark:text-white">My Projects</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">A showcase of recent work and side projects I've built</p>
         </div>
       </section>
 
       <ProjectsSection />
 
       {/* CTA Section */}
-      <section className="bg-black dark:bg-zinc-900 text-white py-16 px-6">
+      <section className="bg-black dark:bg-gray-950 text-white py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Interested in a project?</h2>
-          <p className="text-gray-400 mb-8">Let's discuss how I can help bring your ideas to life</p>
+          <p className="text-gray-300 mb-8">Let's discuss how I can help bring your ideas to life</p>
           <a href="/contact" className="inline-block px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition">
             Get in Touch
           </a>

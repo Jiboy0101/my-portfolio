@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
 const contactMethods = [
   {
     icon: "✉️",
@@ -57,20 +56,20 @@ export function ContactSection() {
   };
 
   return (
-    <section className="py-20 px-6 max-w-4xl mx-auto">
-      <h2 className="text-4xl font-bold mb-12">Let's Work Together</h2>
+    <section className="py-20 px-6 max-w-4xl mx-auto bg-white dark:bg-black text-black dark:text-white">
+      <h2 className="text-4xl font-bold mb-12 text-black dark:text-white">Let's Work Together</h2>
       <div className="grid md:grid-cols-2 gap-12">
         {/* Contact Form */}
         <div>
-          <h3 className="text-3xl font-bold mb-8">Send me a Message</h3>
+          <h3 className="text-3xl font-bold mb-8 text-black dark:text-white">Send me a Message</h3>
           {submitted && (
-            <div className="mb-6 p-4 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 rounded-lg">
+            <div className="mb-6 p-4 rounded-lg bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">
               ✓ Thanks for reaching out! I'll get back to you soon.
             </div>
           )}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold mb-2">Name</label>
+              <label htmlFor="name" className="block text-sm font-semibold mb-2 text-black dark:text-white">Name</label>
               <input
                 type="text"
                 id="name"
@@ -78,12 +77,12 @@ export function ContactSection() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your name"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold mb-2">Email</label>
+              <label htmlFor="email" className="block text-sm font-semibold mb-2 text-black dark:text-white">Email</label>
               <input
                 type="email"
                 id="email"
@@ -91,12 +90,12 @@ export function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="your@email.com"
               />
             </div>
             <div>
-              <label htmlFor="subject" className="block text-sm font-semibold mb-2">Subject</label>
+              <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-black dark:text-white">Subject</label>
               <input
                 type="text"
                 id="subject"
@@ -104,12 +103,12 @@ export function ContactSection() {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="What's this about?"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-semibold mb-2">Message</label>
+              <label htmlFor="message" className="block text-sm font-semibold mb-2 text-black dark:text-white">Message</label>
               <textarea
                 id="message"
                 name="message"
@@ -117,13 +116,13 @@ export function ContactSection() {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-2 bg-zinc-100 dark:bg-zinc-800 rounded-lg border border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                 placeholder="Your message..."
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg font-semibold hover:opacity-90 transition"
+              className="w-full px-6 py-3 rounded-lg font-semibold bg-black dark:bg-white text-white dark:text-black hover:opacity-80 transition"
             >
               Send Message
             </button>
@@ -132,8 +131,8 @@ export function ContactSection() {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-3xl font-bold mb-8">Get in Touch</h3>
-          <p className="text-zinc-600 dark:text-zinc-300 mb-12">
+          <h3 className="text-3xl font-bold mb-8 text-black dark:text-white">Get in Touch</h3>
+          <p className="mb-12 text-gray-600 dark:text-gray-300">
             Feel free to reach out through any of these channels. I typically respond within 24 hours.
           </p>
           <div className="space-y-6">
@@ -143,13 +142,13 @@ export function ContactSection() {
                 href={method.link}
                 target={method.link.startsWith("http") ? "_blank" : undefined}
                 rel={method.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="block p-6 bg-zinc-50 dark:bg-zinc-800 rounded-lg hover:shadow-lg transition border border-zinc-200 dark:border-zinc-700 hover:border-blue-500 dark:hover:border-blue-400"
+                className="block p-6 rounded-lg hover:shadow-lg transition border bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800"
               >
                 <div className="flex items-start gap-4">
                   <span className="text-3xl">{method.icon}</span>
                   <div>
-                    <h4 className="font-bold text-lg mb-1">{method.title}</h4>
-                    <p className="text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400">
+                    <h4 className="font-bold text-lg mb-1 text-black dark:text-white">{method.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-400">
                       {method.value}
                     </p>
                   </div>
@@ -165,32 +164,32 @@ export function ContactSection() {
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-black dark:text-white">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur border-b border-zinc-200 dark:border-zinc-800">
+      <nav className="sticky top-0 z-50 bg-white dark:bg-black backdrop-blur border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold hover:text-blue-600 dark:hover:text-blue-400">Portfolio</a>
-          <div className="flex gap-6 text-sm">
-            <a href="/about" className="hover:text-blue-600 dark:hover:text-blue-400">About</a>
-            <a href="/projects" className="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-            <a href="/skills" className="hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
-            <a href="/contact" className="hover:text-blue-600 dark:hover:text-blue-400 font-semibold">Contact</a>
+          <a href="/" className="text-xl font-bold text-black dark:text-white hover:opacity-80 transition">Portfolio</a>
+          <div className="flex gap-6 text-sm items-center">
+            <a href="/about" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">About</a>
+            <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Projects</a>
+            <a href="/skills" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Skills</a>
+            <a href="/contact" className="text-black dark:text-white font-semibold">Contact</a>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-950 dark:to-zinc-900 py-16 px-6">
+      <section className="bg-gray-50 dark:bg-gray-900 py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl font-bold mb-4">Let's Work Together</h1>
-          <p className="text-lg text-zinc-600 dark:text-zinc-300">I'm always interested in hearing about new projects and opportunities</p>
+          <h1 className="text-5xl font-bold mb-4 text-black dark:text-white">Let's Work Together</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">I'm always interested in hearing about new projects and opportunities</p>
         </div>
       </section>
 
       <ContactSection />
 
       {/* Footer */}
-      <section className="bg-black dark:bg-zinc-900 text-white py-12 px-6">
+      <section className="bg-black dark:bg-gray-950 text-white py-12 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p>&copy; 2024 Your Name. All rights reserved.</p>
         </div>
