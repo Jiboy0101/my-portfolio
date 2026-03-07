@@ -54,8 +54,9 @@ const config: Config = {
         'dark-secondary': '#A1A1AA',
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
+        sans: ['var(--font-inter)'],
+        heading: ['var(--font-poppins)'],
+        poppins: ['var(--font-poppins)'],
       },
     },
   },

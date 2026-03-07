@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+/* Global Font Families */
+html {
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+code, pre {
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
 :root {
   /* Light Theme - Primary Colors */
   --background: #ffffff;

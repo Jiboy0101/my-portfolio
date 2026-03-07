@@ -15,7 +15,7 @@ export default function Home() {
         className="sticky top-0 z-50 backdrop-blur border-b bg-white dark:bg-black border-gray-200 dark:border-gray-800 transition-colors duration-300"
       >
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h2 className="text-xl font-bold text-black dark:text-white">Portfolio</h2>
+          <h2 className="text-xl font-bold text-black dark:text-white">myPortfolio</h2>
           <div className="flex gap-6 text-sm items-center">
             <a 
               href="/about" 
@@ -55,12 +55,12 @@ export default function Home() {
             <h1 
               className="text-6xl md:text-7xl font-bold mb-4 text-black dark:text-white"
             >
-              Hi, I'm a Developer
+              Hi, I'm Jaybee
             </h1>
             <p 
               className="text-2xl mb-6 text-gray-600 dark:text-gray-300"
             >
-              Building beautiful and functional web experiences
+              A System Engineer and a passionate Front-end Developer based in the Philippines
             </p>
             <p 
               className="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-400"
