@@ -1,5 +1,7 @@
 "use client";
 
+import { MobileNav } from "../components/MobileNav";
+
 const projectsData = [
   {
     title: "E-Commerce Platform",
@@ -78,17 +80,18 @@ export function ProjectsSection() {
 
 export default function Projects() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+    <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white dark:bg-black backdrop-blur border-b border-gray-200 dark:border-gray-800">
+      <nav className="sticky top-0 z-50 bg-light-bg dark:bg-dark-bg backdrop-blur border-b border-light-border dark:border-dark-border">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold text-black dark:text-white hover:opacity-80 transition">Portfolio</a>
-          <div className="flex gap-6 text-sm items-center">
+          <a href="/" className="text-lg sm:text-xl font-bold text-black dark:text-white hover:opacity-80 transition">JS</a>
+          <div className="hidden md:flex gap-6 text-sm items-center">
             <a href="/about" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">About</a>
             <a href="/projects" className="text-black dark:text-white font-semibold">Projects</a>
             <a href="/skills" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Skills</a>
             <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Contact</a>
           </div>
+          <MobileNav />
         </div>
       </nav>
 

@@ -1,60 +1,60 @@
 // Global Color Scheme for Portfolio with Theme Support
 export const colors = {
-  // Light Theme
+  // Light Theme - Modern Black & Dirty White
   light: {
     primary: {
-      main: '#000000',
+      main: '#1a1a1a',
       secondary: '#71717A',
     },
     background: {
-      default: '#FFFFFF',
-      alt: '#F4F4F5',
+      default: '#f8f8f6',
+      alt: '#efefed',
     },
     text: {
-      primary: '#000000',
+      primary: '#1a1a1a',
       secondary: '#71717A',
     },
-    border: '#E4E4E7',
-    hover: '#F4F4F5',
+    border: '#e0e0de',
+    hover: '#efefed',
     
     // Component specific
     card: {
-      bg: '#FFFFFF',
-      border: '#E4E4E7',
+      bg: '#f8f8f6',
+      border: '#e0e0de',
     },
     button: {
       primary: {
-        bg: '#000000',
-        text: '#FFFFFF',
+        bg: '#1a1a1a',
+        text: '#f8f8f6',
       },
       secondary: {
-        bg: '#E4E4E7',
-        text: '#000000',
+        bg: '#efefed',
+        text: '#1a1a1a',
       },
     },
     input: {
-      bg: '#F4F4F5',
-      border: '#E4E4E7',
-      text: '#000000',
+      bg: '#efefed',
+      border: '#e0e0de',
+      text: '#1a1a1a',
     },
     badge: {
-      bg: '#F4F4F5',
-      text: '#000000',
+      bg: '#efefed',
+      text: '#1a1a1a',
     },
   },
 
   // Dark Theme
   dark: {
     primary: {
-      main: '#FFFFFF',
+      main: '#f8f8f6',
       secondary: '#A1A1AA',
     },
     background: {
-      default: '#09090B',
-      alt: '#18181B',
+      default: '#0f0f0e',
+      alt: '#1a1a19',
     },
     text: {
-      primary: '#FAFAFA',
+      primary: '#f8f8f6',
       secondary: '#A1A1AA',
     },
     border: '#27272A',
@@ -67,12 +67,12 @@ export const colors = {
     },
     button: {
       primary: {
-        bg: '#FFFFFF',
-        text: '#000000',
+        bg: '#f8f8f6',
+        text: '#1a1a1a',
       },
       secondary: {
         bg: '#27272A',
-        text: '#FFFFFF',
+        text: '#f8f8f6',
       },
     },
     input: {

@@ -7,10 +7,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary colors that change with theme
+        // Primary colors that change with theme - Modern Black & Dirty White
         primary: {
-          light: '#000000',
-          dark: '#FFFFFF',
+          light: '#1a1a1a',
+          dark: '#f8f8f6',
         },
         
         // Accent colors - Light theme
@@ -24,27 +24,27 @@ const config: Config = {
         'accent-yellow': '#FBBF24',
         'accent-indigo': '#6366F1',
         
-        // Semantic colors
-        'light-bg': '#FFFFFF',
-        'light-bg-alt': '#F4F4F5',
-        'light-border': '#E4E4E7',
-        'light-text': '#000000',
+        // Semantic colors - Modern
+        'light-bg': '#f8f8f6',
+        'light-bg-alt': '#efefed',
+        'light-border': '#e0e0de',
+        'light-text': '#1a1a1a',
         'light-text-muted': '#71717A',
         
-        'dark-bg': '#09090B',
-        'dark-bg-alt': '#18181B',
+        'dark-bg': '#0f0f0e',
+        'dark-bg-alt': '#1a1a19',
         'dark-border': '#27272A',
-        'dark-text': '#FAFAFA',
+        'dark-text': '#f8f8f6',
         'dark-text-muted': '#A1A1AA',
       },
       backgroundColor: {
-        'card-light': '#FFFFFF',
+        'card-light': '#f8f8f6',
         'card-dark': '#18181B',
-        'input-light': '#F4F4F5',
+        'input-light': '#efefed',
         'input-dark': '#18181B',
       },
       borderColor: {
-        'light': '#E4E4E7',
+        'light': '#e0e0de',
         'dark': '#27272A',
       },
       textColor: {

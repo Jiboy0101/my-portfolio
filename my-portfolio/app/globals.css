@@ -19,18 +19,18 @@ code, pre {
 }
 
 :root {
-  /* Light Theme - Primary Colors */
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Theme - Primary Colors - Modern Black & Dirty White */
+  --background: #f8f8f6;
+  --foreground: #1a1a1a;
   
   /* Light Theme - Global Colors */
-  --color-primary: #000000;
+  --color-primary: #1a1a1a;
   --color-secondary: #71717A;
-  --color-background: #ffffff;
-  --color-background-alt: #F4F4F5;
-  --color-border: #E4E4E7;
-  --color-hover: #F4F4F5;
-  --color-text: #000000;
+  --color-background: #f8f8f6;
+  --color-background-alt: #efefed;
+  --color-border: #e0e0de;
+  --color-hover: #efefed;
+  --color-text: #1a1a1a;
   --color-text-muted: #71717A;
   
   /* Light Theme - Accent Colors */
@@ -45,17 +45,17 @@ code, pre {
   --color-accent-indigo: #6366F1;
   
   /* Light Theme - Component Colors */
-  --color-card-bg: #ffffff;
-  --color-card-border: #E4E4E7;
-  --color-button-primary: #000000;
-  --color-button-primary-text: #ffffff;
-  --color-button-secondary: #E4E4E7;
-  --color-button-secondary-text: #000000;
-  --color-input-bg: #F4F4F5;
-  --color-input-border: #E4E4E7;
-  --color-input-text: #000000;
-  --color-badge-bg: #F4F4F5;
-  --color-badge-text: #000000;
+  --color-card-bg: #f8f8f6;
+  --color-card-border: #e0e0de;
+  --color-button-primary: #1a1a1a;
+  --color-button-primary-text: #f8f8f6;
+  --color-button-secondary: #efefed;
+  --color-button-secondary-text: #1a1a1a;
+  --color-input-bg: #efefed;
+  --color-input-border: #e0e0de;
+  --color-input-text: #1a1a1a;
+  --color-badge-bg: #efefed;
+  --color-badge-text: #1a1a1a;
   
   /* Font Variables */
   --font-sans: var(--font-geist-sans);
@@ -78,17 +78,17 @@ code, pre {
 @media (prefers-color-scheme: dark) {
   :root {
     /* Dark Theme - Primary Colors */
-    --background: #09090B;
-    --foreground: #FAFAFA;
+    --background: #0f0f0e;
+    --foreground: #f8f8f6;
     
     /* Dark Theme - Global Colors */
-    --color-primary: #FFFFFF;
+    --color-primary: #f8f8f6;
     --color-secondary: #A1A1AA;
-    --color-background: #09090B;
-    --color-background-alt: #18181B;
+    --color-background: #0f0f0e;
+    --color-background-alt: #1a1a19;
     --color-border: #27272A;
     --color-hover: #27272A;
-    --color-text: #FAFAFA;
+    --color-text: #f8f8f6;
     --color-text-muted: #A1A1AA;
     
     /* Dark Theme - Accent Colors (Slightly Brighter) */
@@ -105,32 +105,32 @@ code, pre {
     /* Dark Theme - Component Colors */
     --color-card-bg: #18181B;
     --color-card-border: #27272A;
-    --color-button-primary: #FFFFFF;
-    --color-button-primary-text: #000000;
+    --color-button-primary: #f8f8f6;
+    --color-button-primary-text: #1a1a1a;
     --color-button-secondary: #27272A;
-    --color-button-secondary-text: #FFFFFF;
+    --color-button-secondary-text: #f8f8f6;
     --color-input-bg: #18181B;
     --color-input-border: #27272A;
-    --color-input-text: #FAFAFA;
+    --color-input-text: #f8f8f6;
     --color-badge-bg: #27272A;
-    --color-badge-text: #FAFAFA;
+    --color-badge-text: #f8f8f6;
   }
 }
 
 /* Manually set dark mode class for next-themes */
 html.dark {
   /* Dark Theme - Primary Colors */
-  --background: #09090B;
-  --foreground: #FAFAFA;
+  --background: #0f0f0e;
+  --foreground: #f8f8f6;
   
   /* Dark Theme - Global Colors */
-  --color-primary: #FFFFFF;
+  --color-primary: #f8f8f6;
   --color-secondary: #A1A1AA;
-  --color-background: #09090B;
-  --color-background-alt: #18181B;
+  --color-background: #0f0f0e;
+  --color-background-alt: #1a1a19;
   --color-border: #27272A;
   --color-hover: #27272A;
-  --color-text: #FAFAFA;
+  --color-text: #f8f8f6;
   --color-text-muted: #A1A1AA;
   
   /* Dark Theme - Accent Colors (Slightly Brighter) */
@@ -147,15 +147,15 @@ html.dark {
   /* Dark Theme - Component Colors */
   --color-card-bg: #18181B;
   --color-card-border: #27272A;
-  --color-button-primary: #FFFFFF;
-  --color-button-primary-text: #000000;
+  --color-button-primary: #f8f8f6;
+  --color-button-primary-text: #1a1a1a;
   --color-button-secondary: #27272A;
-  --color-button-secondary-text: #FFFFFF;
+  --color-button-secondary-text: #f8f8f6;
   --color-input-bg: #18181B;
   --color-input-border: #27272A;
-  --color-input-text: #FAFAFA;
+  --color-input-text: #f8f8f6;
   --color-badge-bg: #27272A;
-  --color-badge-text: #FAFAFA;
+  --color-badge-text: #f8f8f6;
 }
 
 body {
@@ -169,4 +169,51 @@ body {
 html.dark body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Mobile-Friendly Responsive Design */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+  
+  /* Ensure touch-friendly button sizes on mobile */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Better mobile form inputs */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px;
+  }
+  
+  /* Better spacing on mobile */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100vw;
+  }
+}
+
+/* Improve readability on small screens */
+@media (max-width: 640px) {
+  h1 {
+    line-height: 1.3;
+  }
+  
+  h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
 }

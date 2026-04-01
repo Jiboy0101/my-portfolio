@@ -17,6 +17,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "My Portfolio",
   description: "Full-stack developer creating beautiful and functional web experiences",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 };
 
 export default function RootLayout({

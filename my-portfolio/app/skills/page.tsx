@@ -1,5 +1,8 @@
 "use client";
 
+import { Palette, Accessibility, Zap, Lock, Smartphone, Brain } from "lucide-react";
+import { MobileNav } from "../components/MobileNav";
+
 const skillCategories = [
   {
     category: "Frontend Development",
@@ -32,7 +35,7 @@ const skillCategories = [
 
 export function SkillsSection() {
   return (
-    <section className="py-20 px-6 max-w-4xl mx-auto bg-white dark:bg-black text-black dark:text-white">
+    <section className="py-20 px-6 max-w-4xl mx-auto bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
       <h2 className="text-4xl font-bold mb-12 text-black dark:text-white">Skills & Expertise</h2>
       {skillCategories.map((category, idx) => (
         <div key={idx} className="mb-16">
@@ -64,15 +67,15 @@ export function SkillsSection() {
         <h3 className="text-3xl font-bold mb-8 text-black dark:text-white">Other Competencies</h3>
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { icon: "🎨", title: "UI/UX Design", description: "Creating intuitive and beautiful user interfaces" },
-            { icon: "♿", title: "Accessibility", description: "Building inclusive web applications for all users" },
-            { icon: "⚡", title: "Performance", description: "Optimizing applications for speed and efficiency" },
-            { icon: "🔒", title: "Security", description: "Implementing best practices for secure applications" },
-            { icon: "📱", title: "Responsive Design", description: "Mobile-first development and cross-device testing" },
-            { icon: "🧠", title: "Problem Solving", description: "Analytical thinking and creative solutions" }
+            { Icon: Palette, title: "UI/UX Design", description: "Creating intuitive and beautiful user interfaces" },
+            { Icon: Accessibility, title: "Accessibility", description: "Building inclusive web applications for all users" },
+            { Icon: Zap, title: "Performance", description: "Optimizing applications for speed and efficiency" },
+            { Icon: Lock, title: "Security", description: "Implementing best practices for secure applications" },
+            { Icon: Smartphone, title: "Responsive Design", description: "Mobile-first development and cross-device testing" },
+            { Icon: Brain, title: "Problem Solving", description: "Analytical thinking and creative solutions" }
           ].map((skill, i) => (
             <div key={i} className="rounded-lg p-6 text-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <div className="text-4xl mb-3">{skill.icon}</div>
+              <skill.Icon className="w-10 h-10 mx-auto mb-3 text-blue-600 dark:text-blue-400" />
               <h4 className="font-bold mb-2 text-black dark:text-white">{skill.title}</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">{skill.description}</p>
             </div>
@@ -85,19 +88,20 @@ export function SkillsSection() {
 
 export default function Skills() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white">
+    <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text">
       {/* Navigation */}
       <nav 
-        className="sticky top-0 z-50 backdrop-blur border-b bg-white dark:bg-black border-gray-200 dark:border-gray-800"
+        className="sticky top-0 z-50 backdrop-blur border-b bg-light-bg dark:bg-dark-bg border-light-border dark:border-dark-border"
       >
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold text-black dark:text-white hover:opacity-80 transition">Portfolio</a>
-          <div className="flex gap-6 text-sm items-center">
+          <a href="/" className="text-lg sm:text-xl font-bold text-black dark:text-white hover:opacity-80 transition">JS</a>
+          <div className="hidden md:flex gap-6 text-sm items-center">
             <a href="/about" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">About</a>
             <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Projects</a>
             <a href="/skills" className="text-black dark:text-white font-semibold">Skills</a>
             <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Contact</a>
           </div>
+          <MobileNav />
         </div>
       </nav>
 

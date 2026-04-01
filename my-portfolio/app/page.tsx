@@ -4,19 +4,20 @@ import { AboutSection } from "./about/page";
 import { ProjectsSection } from "./projects/page";
 import { SkillsSection } from "./skills/page";
 import { ContactSection } from "./contact/page";
+import { MobileNav } from "./components/MobileNav";
 
 export default function Home() {
   return (
     <div 
-      className="min-h-screen bg-white dark:bg-black text-black dark:text-white"
+      className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text"
     >
       {/* Navigation */}
       <nav 
-        className="sticky top-0 z-50 backdrop-blur border-b bg-white dark:bg-black border-gray-200 dark:border-gray-800 transition-colors duration-300"
+        className="sticky top-0 z-50 backdrop-blur border-b bg-light-bg dark:bg-dark-bg border-light-border dark:border-dark-border transition-colors duration-300"
       >
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h2 className="text-xl font-bold text-black dark:text-white">JS</h2>
-          <div className="flex gap-6 text-sm items-center">
+          <h2 className="text-lg sm:text-xl font-bold text-light-text dark:text-dark-text">JS</h2>
+          <div className="hidden md:flex gap-6 text-sm items-center">
             <a 
               href="/about" 
               className="text-gray-600 dark:text-gray-300 hover:opacity-70 transition"
@@ -41,19 +42,19 @@ export default function Home() {
             >
               Contact
             </a>
-
           </div>
+          <MobileNav />
         </div>
       </nav>
 
       {/* Hero Section */}
       <section 
-        className="min-h-screen flex items-center justify-center px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+        className="min-h-screen flex items-center justify-center px-6 bg-light-bg-alt dark:bg-dark-bg-alt transition-colors duration-300"
       >
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left - Image */}
           <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-800 shadow-lg">
+            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden bg-light-bg-alt dark:bg-dark-bg-alt shadow-lg">
               <img 
                 src="/assets/images/me.jpg" 
                 alt="Jaybee" 
@@ -66,31 +67,31 @@ export default function Home() {
           <div className="flex flex-col justify-center">
             <div className="mb-8">
               <h1 
-                className="text-6xl md:text-7xl font-bold mb-4 text-black dark:text-white"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-light-text dark:text-dark-text"
               >
                 Hi, I'm Jaybee
               </h1>
               <p 
-                className="text-2xl mb-6 text-gray-600 dark:text-gray-300"
+                className="text-lg sm:text-xl md:text-2xl mb-6 text-light-text-muted dark:text-dark-text-muted"
               >
                 A System Engineer and a passionate Front-end Developer based in the Philippines
               </p>
               <p 
-                className="text-lg text-gray-600 dark:text-gray-400"
+                className="text-base sm:text-lg text-light-text-muted dark:text-dark-text-muted"
               >
-                Let's build something amazing together.
+                I create modern web applications with cutting-edge technologies. Let's build something amazing together.
               </p>
             </div>
             <div className="flex gap-4 flex-col md:flex-row">
               <a 
                 href="/contact" 
-                className="px-8 py-3 rounded-lg font-semibold bg-black dark:bg-white text-white dark:text-black hover:opacity-80 transition text-center"
+                className="px-8 py-3 rounded-lg font-semibold bg-light-text dark:bg-dark-text text-light-bg dark:text-dark-bg hover:opacity-80 transition text-center"
               >
                 Get in Touch
               </a>
               <a 
                 href="/projects" 
-                className="px-8 py-3 rounded-lg font-semibold border-2 border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition text-center"
+                className="px-8 py-3 rounded-lg font-semibold border-2 border-light-text dark:border-dark-text text-light-text dark:text-dark-text hover:bg-light-text hover:text-light-bg dark:hover:bg-dark-text dark:hover:text-dark-bg transition text-center"
               >
                 View My Work
               </a>
