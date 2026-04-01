@@ -5,27 +5,21 @@ const contactMethods = [
   {
     icon: "✉️",
     title: "Email",
-    value: "hello@example.com",
-    link: "mailto:hello@example.com"
+    value: "jaybeesantua1130@gmail.com",
+    link: "mailto:jaybeesantua1130@gmail.com"
   },
   {
     icon: "💼",
     title: "LinkedIn",
-    value: "linkedin.com/in/yourprofile",
-    link: "https://linkedin.com"
+    value: "linkedin.com/in/jaybee-santua",
+    link: "https://www.linkedin.com/in/jaybee-santua/"
   },
   {
     icon: "👨‍💻",
     title: "GitHub",
-    value: "github.com/yourprofile",
-    link: "https://github.com"
+    value: "github.com/Jiboy0101/",
+    link: "https://github.com/Jiboy0101/"
   },
-  {
-    icon: "𝕏",
-    title: "Twitter",
-    value: "@yourhandle",
-    link: "https://twitter.com"
-  }
 ];
 
 export function ContactSection() {

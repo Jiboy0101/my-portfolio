@@ -15,7 +15,7 @@ export default function Home() {
         className="sticky top-0 z-50 backdrop-blur border-b bg-white dark:bg-black border-gray-200 dark:border-gray-800 transition-colors duration-300"
       >
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h2 className="text-xl font-bold text-black dark:text-white">myPortfolio</h2>
+          <h2 className="text-xl font-bold text-black dark:text-white">JS</h2>
           <div className="flex gap-6 text-sm items-center">
             <a 
               href="/about" 
@@ -50,37 +50,51 @@ export default function Home() {
       <section 
         className="min-h-screen flex items-center justify-center px-6 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
       >
-        <div className="max-w-3xl text-center">
-          <div className="mb-8">
-            <h1 
-              className="text-6xl md:text-7xl font-bold mb-4 text-black dark:text-white"
-            >
-              Hi, I'm Jaybee
-            </h1>
-            <p 
-              className="text-2xl mb-6 text-gray-600 dark:text-gray-300"
-            >
-              A System Engineer and a passionate Front-end Developer based in the Philippines
-            </p>
-            <p 
-              className="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-400"
-            >
-              I create modern web applications with cutting-edge technologies. Let's build something amazing together.
-            </p>
+        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Left - Image */}
+          <div className="flex items-center justify-center">
+            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden bg-gray-200 dark:bg-gray-800 shadow-lg">
+              <img 
+                src="/assets/images/me.jpg" 
+                alt="Jaybee" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          <div className="flex gap-4 justify-center flex-col md:flex-row">
-            <a 
-              href="/contact" 
-              className="px-8 py-3 rounded-lg font-semibold bg-black dark:bg-white text-white dark:text-black hover:opacity-80 transition"
-            >
-              Get in Touch
-            </a>
-            <a 
-              href="/projects" 
-              className="px-8 py-3 rounded-lg font-semibold border-2 border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
-            >
-              View My Work
-            </a>
+
+          {/* Right - Text */}
+          <div className="flex flex-col justify-center">
+            <div className="mb-8">
+              <h1 
+                className="text-6xl md:text-7xl font-bold mb-4 text-black dark:text-white"
+              >
+                Hi, I'm Jaybee
+              </h1>
+              <p 
+                className="text-2xl mb-6 text-gray-600 dark:text-gray-300"
+              >
+                A System Engineer and a passionate Front-end Developer based in the Philippines
+              </p>
+              <p 
+                className="text-lg text-gray-600 dark:text-gray-400"
+              >
+                Let's build something amazing together.
+              </p>
+            </div>
+            <div className="flex gap-4 flex-col md:flex-row">
+              <a 
+                href="/contact" 
+                className="px-8 py-3 rounded-lg font-semibold bg-black dark:bg-white text-white dark:text-black hover:opacity-80 transition text-center"
+              >
+                Get in Touch
+              </a>
+              <a 
+                href="/projects" 
+                className="px-8 py-3 rounded-lg font-semibold border-2 border-black dark:border-white text-black dark:text-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition text-center"
+              >
+                View My Work
+              </a>
+            </div>
           </div>
         </div>
       </section>

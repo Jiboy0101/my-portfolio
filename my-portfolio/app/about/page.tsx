@@ -32,10 +32,10 @@ export function AboutSection() {
           <div className="rounded-lg p-6 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
             <h3 className="text-xl font-bold mb-4 text-black dark:text-white">Quick Facts</h3>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-              <li>🎓 <strong>Education:</strong> Computer Science degree</li>
-              <li>💼 <strong>Experience:</strong> 5+ years in web development</li>
+              <li>🎓 <strong>Education:</strong>  BS in Information Technology</li>
+              <li>💼 <strong>Experience:</strong> 1+ years in Systems Engineer</li>
               <li>🌍 <strong>Location:</strong> Remote-friendly</li>
-              <li>⚡ <strong>Specialization:</strong> Full-stack development</li>
+              <li>⚡ <strong>Specialization:</strong> Front-End Development</li>
               <li>🎯 <strong>Goal:</strong> Build impactful digital solutions</li>
             </ul>
           </div>

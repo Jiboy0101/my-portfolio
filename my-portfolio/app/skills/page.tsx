@@ -5,12 +5,10 @@ const skillCategories = [
     category: "Frontend Development",
     description: "Building responsive, interactive user interfaces",
     skills: [
-      { name: "React", level: 95 },
-      { name: "Next.js", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Tailwind CSS", level: 95 },
-      { name: "Vue.js", level: 85 },
-      { name: "Svelte", level: 80 }
+      { name: "React", level: 85 },
+      { name: "Next.js", level: 80 },
+      { name: "TypeScript", level: 80 },
+      { name: "Tailwind CSS", level: 80 }
     ]
   },
   {
@@ -19,10 +17,7 @@ const skillCategories = [
     skills: [
       { name: "Node.js", level: 90 },
       { name: "Python", level: 85 },
-      { name: "PostgreSQL", level: 90 },
-      { name: "MongoDB", level: 85 },
-      { name: "Firebase", level: 85 },
-      { name: "REST APIs", level: 95 }
+      { name: "Firebase", level: 85 }
     ]
   },
   {
@@ -30,25 +25,9 @@ const skillCategories = [
     description: "Deployment, automation, and development tools",
     skills: [
       { name: "Git & GitHub", level: 95 },
-      { name: "Docker", level: 85 },
-      { name: "AWS", level: 80 },
-      { name: "Vercel", level: 90 },
-      { name: "CI/CD", level: 85 },
-      { name: "Linux", level: 80 }
+      { name: "Vercel", level: 90 }
     ]
   },
-  {
-    category: "Testing & Quality",
-    description: "Ensuring code quality and reliability",
-    skills: [
-      { name: "Jest", level: 90 },
-      { name: "React Testing Library", level: 85 },
-      { name: "Cypress", level: 80 },
-      { name: "Unit Testing", level: 90 },
-      { name: "Integration Testing", level: 85 },
-      { name: "ESLint", level: 90 }
-    ]
-  }
 ];
 
 export function SkillsSection() {
