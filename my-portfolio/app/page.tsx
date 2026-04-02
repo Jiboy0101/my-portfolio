@@ -5,6 +5,7 @@ import { ProjectsSection } from "./projects/page";
 import { SkillsSection } from "./skills/page";
 import { ContactSection } from "./contact/page";
 import { MobileNav } from "./components/MobileNav";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 export default function Home() {
   return (
@@ -13,9 +14,9 @@ export default function Home() {
     >
       {/* Navigation */}
       <nav 
-        className="sticky top-0 z-50 backdrop-blur border-b bg-light-bg dark:bg-dark-bg border-light-border dark:border-dark-border transition-colors duration-300"
+        className="sticky top-4 z-50 backdrop-blur bg-light-bg dark:bg-dark-bg border border-light-border dark:border-dark-border transition-colors duration-300 mx-auto mt-4 max-w-4xl rounded-2xl"
       >
-        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="px-6 py-4 flex justify-between items-center w-full">
           <h2 className="text-lg sm:text-xl font-bold text-light-text dark:text-dark-text">JS</h2>
           <div className="hidden md:flex gap-6 text-sm items-center">
             <a 
@@ -42,6 +43,8 @@ export default function Home() {
             >
               Contact
             </a>
+            <div className="w-px h-6 bg-light-border dark:bg-dark-border"></div>
+            <ThemeToggle />
           </div>
           <MobileNav />
         </div>
@@ -54,11 +57,11 @@ export default function Home() {
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left - Image */}
           <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden bg-light-bg-alt dark:bg-dark-bg-alt shadow-lg">
+            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden bg-light-bg-alt dark:bg-dark-bg-alt shadow-2xl hover:shadow-none transition-shadow duration-300 group">
               <img 
                 src="/assets/images/me.jpg" 
                 alt="Jaybee" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
           </div>
@@ -74,7 +77,7 @@ export default function Home() {
               <p 
                 className="text-lg sm:text-xl md:text-2xl mb-6 text-light-text-muted dark:text-dark-text-muted"
               >
-                A System Engineer and a passionate Front-end Developer based in the Philippines
+                A System Engineer and a passionate Front-end Developer
               </p>
               <p 
                 className="text-base sm:text-lg text-light-text-muted dark:text-dark-text-muted"

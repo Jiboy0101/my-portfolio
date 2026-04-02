@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Roboto, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const inter = Inter({
-  variable: "--font-inter",
+const roboto = Roboto({
+  variable: "--font-roboto",
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
-  weight: ["400", "500", "600", "700"],
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${poppins.variable} antialiased`}
+        className={`${roboto.variable} ${playfairDisplay.variable} antialiased`}
       >
         <Providers>
           {children}

@@ -1,76 +1,82 @@
 "use client";
 
 import { MobileNav } from "../components/MobileNav";
+import { ThemeToggle } from "../components/ThemeToggle";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
+import { Button } from "../components/ui/button";
 
 const projectsData = [
   {
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with payment integration, inventory management, and real-time notifications.",
     tech: ["Next.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
-    image: "bg-gradient-to-br from-blue-400 to-blue-600",
+    image: "bg-accent-blue",
     link: "#"
   },
   {
     title: "Analytics Dashboard",
     description: "Interactive dashboard for data visualization and real-time analytics with custom charts and comprehensive reports.",
     tech: ["React", "TypeScript", "D3.js", "Node.js"],
-    image: "bg-gradient-to-br from-purple-400 to-purple-600",
+    image: "bg-accent-purple",
     link: "#"
   },
   {
     title: "Task Management App",
     description: "Collaborative task management tool with real-time updates, team workspaces, and file sharing capabilities.",
     tech: ["React", "Firebase", "Tailwind CSS", "Socket.io"],
-    image: "bg-gradient-to-br from-green-400 to-green-600",
+    image: "bg-accent-green",
     link: "#"
   },
   {
     title: "AI Content Generator",
     description: "Smart content generation tool powered by AI with customizable templates and batch processing capabilities.",
     tech: ["Next.js", "OpenAI API", "Vercel", "PostgreSQL"],
-    image: "bg-gradient-to-br from-orange-400 to-orange-600",
+    image: "bg-accent-orange",
     link: "#"
   },
   {
     title: "Social Media Analytics",
     description: "Unified platform for tracking social media metrics across multiple channels with actionable insights.",
     tech: ["React", "Python", "MongoDB", "Chart.js"],
-    image: "bg-gradient-to-br from-pink-400 to-pink-600",
+    image: "bg-accent-pink",
     link: "#"
   },
   {
     title: "Mobile App Backend",
     description: "Scalable REST API backend for a mobile fitness app with authentication, push notifications, and real-time data.",
     tech: ["Node.js", "Express", "PostgreSQL", "Redis"],
-    image: "bg-gradient-to-br from-teal-400 to-teal-600",
+    image: "bg-accent-teal",
     link: "#"
   }
 ];
 
 export function ProjectsSection() {
   return (
-    <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-black dark:text-white">Featured Projects</h2>
+        <h2 className="text-4xl font-bold mb-12 text-light-text dark:text-dark-text">Featured Projects</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projectsData.map((project, i) => (
-            <div key={i} className="group cursor-pointer">
-              <div className={`${project.image} rounded-lg h-48 mb-4 transition-transform group-hover:scale-105`}></div>
-              <div className="rounded-lg p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition">
-                <h3 className="text-xl font-bold mb-2 text-black dark:text-white">{project.title}</h3>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+            <Card key={i} className="group cursor-pointer hover:shadow-xl transition-shadow">
+              <div className={`${project.image} rounded-t-lg h-48 transition-transform group-hover:scale-105`}></div>
+              <CardHeader>
+                <CardTitle className="text-light-text dark:text-dark-text">{project.title}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, j) => (
-                    <span key={j} className="px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200">
+                    <Badge key={j} variant="blue" className="text-xs">
                       {tech}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
-                <a href={project.link} className="inline-block font-semibold hover:underline text-blue-600 dark:text-blue-400">
+                <Button className="w-full" variant="default">
                   View Project →
-                </a>
-              </div>
-            </div>
+                </Button>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
@@ -90,6 +96,8 @@ export default function Projects() {
             <a href="/projects" className="text-black dark:text-white font-semibold">Projects</a>
             <a href="/skills" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Skills</a>
             <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Contact</a>
+            <div className="w-px h-6 bg-light-border dark:bg-dark-border"></div>
+            <ThemeToggle />
           </div>
           <MobileNav />
         </div>

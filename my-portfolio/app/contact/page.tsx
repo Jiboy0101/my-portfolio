@@ -3,6 +3,11 @@
 import { useState } from "react";
 import { Mail, Briefcase, Code } from "lucide-react";
 import { MobileNav } from "../components/MobileNav";
+import { ThemeToggle } from "../components/ThemeToggle";
+import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
+import { Label } from "../components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 
 const contactMethods = [
   {
@@ -58,54 +63,51 @@ export function ContactSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {/* Contact Form */}
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-black dark:text-white">Send me a Message</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-light-text dark:text-dark-text">Send me a Message</h3>
           {submitted && (
-            <div className="mb-6 p-4 rounded-lg bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200">
+            <div className="mb-6 p-4 rounded-lg bg-accent-green/20 text-accent-green border border-accent-green/50">
               ✓ Thanks for reaching out! I'll get back to you soon.
             </div>
           )}
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold mb-2 text-black dark:text-white">Name</label>
-              <input
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input
                 type="text"
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your name"
               />
             </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-semibold mb-2 text-black dark:text-white">Email</label>
-              <input
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="your@email.com"
               />
             </div>
-            <div>
-              <label htmlFor="subject" className="block text-sm font-semibold mb-2 text-black dark:text-white">Subject</label>
-              <input
+            <div className="space-y-2">
+              <Label htmlFor="subject">Subject</Label>
+              <Input
                 type="text"
                 id="subject"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="What's this about?"
               />
             </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-semibold mb-2 text-black dark:text-white">Message</label>
+            <div className="space-y-2">
+              <Label htmlFor="message">Message</Label>
               <textarea
                 id="message"
                 name="message"
@@ -113,44 +115,45 @@ export function ContactSection() {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-2 rounded-lg border bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                className="flex w-full rounded-md border border-light-border bg-light-bg px-3 py-2 text-sm text-light-text placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-light-text focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-dark-border dark:bg-dark-bg dark:text-dark-text dark:placeholder:text-gray-400 dark:focus-visible:ring-dark-text dark:focus-visible:ring-offset-dark-bg resize-none"
                 placeholder="Your message..."
               ></textarea>
             </div>
-            <button
+            <Button
               type="submit"
-              className="w-full px-6 py-3 rounded-lg font-semibold bg-light-text dark:bg-dark-text text-light-bg dark:text-dark-bg hover:opacity-80 transition"
+              className="w-full"
             >
               Send Message
-            </button>
+            </Button>
           </form>
         </div>
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-black dark:text-white">Get in Touch</h3>
-          <p className="mb-12 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-light-text dark:text-dark-text">Get in Touch</h3>
+          <p className="mb-12 text-sm sm:text-base text-light-text-muted dark:text-dark-text-muted">
             Feel free to reach out through any of these channels. I typically respond within 24 hours.
           </p>
           <div className="space-y-6">
             {contactMethods.map((method, i) => (
-              <a
-                key={i}
-                href={method.link}
-                target={method.link.startsWith("http") ? "_blank" : undefined}
-                rel={method.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="block p-6 rounded-lg hover:shadow-lg transition border bg-gray-50 dark:bg-gray-900 border-gray-200 dark:border-gray-800"
-              >
-                <div className="flex items-start gap-4">
-                  <method.Icon className="w-8 h-8 shrink-0 text-blue-600 dark:text-blue-400 mt-1" />
-                  <div>
-                    <h4 className="font-bold text-lg mb-1 text-black dark:text-white">{method.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {method.value}
-                    </p>
-                  </div>
-                </div>
-              </a>
+              <Card key={i} className="cursor-pointer hover:shadow-lg transition">
+                <CardContent className="pt-6">
+                  <a
+                    href={method.link}
+                    target={method.link.startsWith("http") ? "_blank" : undefined}
+                    rel={method.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="flex items-start gap-4"
+                  >
+                    <method.Icon className="w-8 h-8 shrink-0 text-accent-blue mt-1" />
+                    <div>
+                      <h4 className="font-bold text-lg mb-1 text-light-text dark:text-dark-text">{method.title}</h4>
+                      <p className="text-light-text-muted dark:text-dark-text-muted text-sm">
+                        {method.value}
+                      </p>
+                    </div>
+                  </a>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -171,6 +174,8 @@ export default function Contact() {
             <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Projects</a>
             <a href="/skills" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Skills</a>
             <a href="/contact" className="text-black dark:text-white font-semibold">Contact</a>
+            <div className="w-px h-6 bg-light-border dark:bg-dark-border"></div>
+            <ThemeToggle />
           </div>
           <MobileNav />
         </div>

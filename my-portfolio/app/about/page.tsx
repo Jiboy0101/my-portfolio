@@ -2,6 +2,7 @@
 
 import { Palette, Wrench, Rocket, Handshake, BookOpen, Star, GraduationCap, Briefcase, Globe, Zap, Target } from "lucide-react";
 import { MobileNav } from "../components/MobileNav";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 export function AboutSection() {
   return (
@@ -10,14 +11,11 @@ export function AboutSection() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
-            I'm a Front-end Developer with a passion for creating elegant solutions to complex problems. 
-            With several years of experience in modern web technologies, I help businesses and startups 
-            build their digital presence and achieve their goals through thoughtful design and robust code.
+            I'm a System Engineer in my current job, but my true passion lies in web development. I specialize in front-end development, creating responsive and user-friendly websites and applications.
           </p>
           <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
             My journey in web development started with a curiosity about how things work on the internet. 
-            What began as a hobby quickly turned into a career where I've had the opportunity to work on 
-            projects ranging from small startups to enterprise-level applications.
+            Also, I'm a techy at heart, always eager to learn and experiment with new tools and techniques.
           </p>
           <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
             When I'm not coding, you can find me exploring new technologies, contributing to open source 
@@ -26,12 +24,11 @@ export function AboutSection() {
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-300">
             I'm committed to writing clean, maintainable code and delivering products that users love. 
-            I thrive in collaborative environments and enjoy mentoring junior developers and sharing 
-            knowledge with the community.
+            I seek to even learn more about back-end development and DevOps to become a well-rounded full-stack developer in the future.
           </p>
         </div>
         <div className="space-y-8">
-          <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg h-64"></div>
+          <div className="bg-accent-blue rounded-lg h-64"></div>
           <div className="rounded-lg p-6 bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
             <h3 className="text-xl font-bold mb-4 text-black dark:text-white">Quick Facts</h3>
             <ul className="space-y-2 text-gray-700 dark:text-gray-300">
@@ -131,6 +128,8 @@ export default function About() {
             <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Projects</a>
             <a href="/skills" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Skills</a>
             <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Contact</a>
+            <div className="w-px h-6 bg-light-border dark:bg-dark-border"></div>
+            <ThemeToggle />
           </div>
           <MobileNav />
         </div>

@@ -2,6 +2,9 @@
 
 import { Palette, Accessibility, Zap, Lock, Smartphone, Brain } from "lucide-react";
 import { MobileNav } from "../components/MobileNav";
+import { ThemeToggle } from "../components/ThemeToggle";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { Badge } from "../components/ui/badge";
 
 const skillCategories = [
   {
@@ -40,31 +43,33 @@ export function SkillsSection() {
       {skillCategories.map((category, idx) => (
         <div key={idx} className="mb-16">
           <div className="mb-8">
-            <h3 className="text-3xl font-bold mb-2 text-black dark:text-white">{category.category}</h3>
-            <p className="text-gray-600 dark:text-gray-400">{category.description}</p>
+            <h3 className="text-3xl font-bold mb-2 text-light-text dark:text-dark-text">{category.category}</h3>
+            <p className="text-light-text-muted dark:text-dark-text-muted">{category.description}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {category.skills.map((skill, i) => (
-              <div key={i}>
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-black dark:text-white">{skill.name}</span>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
-                </div>
-                <div className="w-full rounded-full h-2 bg-gray-200 dark:bg-gray-700">
-                  <div 
-                    className="h-2 rounded-full transition-all bg-blue-500"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-              </div>
+              <Card key={i}>
+                <CardContent className="pt-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="font-semibold text-light-text dark:text-dark-text">{skill.name}</span>
+                    <Badge variant="blue" className="text-xs">{skill.level}%</Badge>
+                  </div>
+                  <div className="w-full rounded-full h-2 bg-light-border dark:bg-dark-border">
+                    <div 
+                      className="h-2 rounded-full transition-all bg-accent-blue"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       ))}
 
       {/* Additional Skills */}
-      <div className="mt-8 py-16 -mx-6 px-6 bg-gray-50 dark:bg-gray-900">
-        <h3 className="text-3xl font-bold mb-8 text-black dark:text-white">Other Competencies</h3>
+      <div className="mt-8 py-16">
+        <h3 className="text-3xl font-bold mb-8 text-light-text dark:text-dark-text">Other Competencies</h3>
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { Icon: Palette, title: "UI/UX Design", description: "Creating intuitive and beautiful user interfaces" },
@@ -74,11 +79,13 @@ export function SkillsSection() {
             { Icon: Smartphone, title: "Responsive Design", description: "Mobile-first development and cross-device testing" },
             { Icon: Brain, title: "Problem Solving", description: "Analytical thinking and creative solutions" }
           ].map((skill, i) => (
-            <div key={i} className="rounded-lg p-6 text-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
-              <skill.Icon className="w-10 h-10 mx-auto mb-3 text-blue-600 dark:text-blue-400" />
-              <h4 className="font-bold mb-2 text-black dark:text-white">{skill.title}</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{skill.description}</p>
-            </div>
+            <Card key={i} className="text-center">
+              <CardContent className="pt-6 flex flex-col items-center">
+                <skill.Icon className="w-10 h-10 mb-3 text-accent-blue" />
+                <CardTitle className="mb-2 text-light-text dark:text-dark-text">{skill.title}</CardTitle>
+                <CardDescription>{skill.description}</CardDescription>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
@@ -100,6 +107,8 @@ export default function Skills() {
             <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Projects</a>
             <a href="/skills" className="text-black dark:text-white font-semibold">Skills</a>
             <a href="/contact" className="text-gray-600 dark:text-gray-300 hover:opacity-80 transition">Contact</a>
+            <div className="w-px h-6 bg-light-border dark:bg-dark-border"></div>
+            <ThemeToggle />
           </div>
           <MobileNav />
         </div>

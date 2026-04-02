@@ -2,10 +2,12 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { Button } from './ui/button';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -15,23 +17,27 @@ export function ThemeToggle() {
     return <div className="w-10 h-10" />;
   }
 
-  const isDark = resolvedTheme === 'dark';
+  const isDark = theme === 'dark';
+
+  const handleToggle = () => {
+    const newTheme = isDark ? 'light' : 'dark';
+    setTheme(newTheme);
+  };
 
   return (
-    <button
-      onClick={() => {
-        setTheme(isDark ? 'light' : 'dark');
-      }}
-      className="p-2 rounded-lg transition"
-      style={{
-        backgroundColor: isDark ? 'var(--color-background-alt)' : 'var(--color-background-alt)',
-        color: isDark ? 'white' : 'black',
-        cursor: 'pointer',
-      }}
+    <Button
+      onClick={handleToggle}
+      variant="outline"
+      size="icon"
       aria-label="Toggle theme"
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+      className="hover:bg-light-border dark:hover:bg-dark-border transition-all duration-200"
     >
-      {isDark ? '☀️' : '🌙'}
-    </button>
+      {isDark ? (
+        <FiSun className="h-5 w-5 text-accent-yellow" />
+      ) : (
+        <FiMoon className="h-5 w-5 text-accent-purple" />
+      )}
+    </Button>
   );
 }
